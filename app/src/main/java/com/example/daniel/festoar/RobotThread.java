@@ -22,7 +22,7 @@ public class RobotThread extends AsyncTask<Object, Void, RobotData> { //<args, s
 
     /* CONSTANTS */
     public static final int maxTimeout = 1000; //milliseconds
-    public static final int maxBytesRead = 1024;
+    public static final int maxBytesRead = 10240; // 10kB
     private static final String tag = "DEBUG_ONLY";
 
     /* VARIABLES */
@@ -38,17 +38,24 @@ public class RobotThread extends AsyncTask<Object, Void, RobotData> { //<args, s
 
         /* Socket*/
         InetSocketAddress hostSock = (InetSocketAddress) params[1];
-        Socket cliSock = new Socket();
+        Socket cliSock = new Socket(); //create socket
         if(!cliSock.isConnected()) {
             try {
-                cliSock.connect(hostSock, maxTimeout);
+                cliSock.connect(hostSock, maxTimeout); //connect to server
                 robData.robOnline = true;
                 robInStream = cliSock.getInputStream();
-                bRead = robInStream.read(data);
+                bRead = robInStream.read(data); //read data
                 if(bRead > 0){
-                    //TODO data to robdata
-                    robData.RobotName = new String(data, "ISO-8859-1").trim(); //working charsets: US-ASCII, ISO-8859-1, UTF-8
-                    robData.robOnline = true; //connection successful
+                    /* Parse RobotData from XML String */
+                    try{
+                        robData = (RobotData) new XMLParser().XMLStringToRobotData(new String(data, "ISO-8859-1")).clone(); //use .clone() ?
+                    }catch(CloneNotSupportedException e){
+                        //System.out.println("Exception thrown  :" + e);
+                        Log.i(tag, e.toString());
+                        robData.robOnline = false;
+                    }
+                    //robData.RobotName = new String(data, "ISO-8859-1").trim(); //working charsets: US-ASCII, ISO-8859-1, UTF-8
+                    //robData.robOnline = true; //connection successful
                     //Log.i(tag, Integer.toString(robData.RobotName.length()));
                     //Log.i(tag, robData.RobotName);
                     /*Log.i(tag, new String(data, "US-ASCII"));
@@ -57,10 +64,10 @@ public class RobotThread extends AsyncTask<Object, Void, RobotData> { //<args, s
                     Log.i(tag, new String(data, "UTF-16BE"));
                     Log.i(tag, new String(data, "UTF-16LE"));
                     Log.i(tag, new String(data, "UTF-16"));*/
-                    Log.i(tag, "-----------------------------");
+                    /*Log.i(tag, "-----------------------------");
                     Log.i(tag, Integer.toString(bRead)+" bytes read: ");
                     String recvInts = new String();
-                    Log.i(tag, new String(data, "ISO-8859-1").trim());
+                    Log.i(tag, new String(data, "ISO-8859-1").trim());*/
                     /*for(int x = 0; x < maxBytesRead; x++) {
                         recvInts+=Integer.toString(data[x]);
                     }

@@ -1,12 +1,18 @@
 package com.example.daniel.festoar;
 
-import android.util.Log;
-
-import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 import org.simpleframework.xml.Default;
 import org.simpleframework.xml.DefaultType;
 import org.simpleframework.xml.Transient;
+
+import java.util.Arrays;
+
+import Classes.TAxisDyn;
+import Classes.TAxisPos;
+import Classes.TCartDyn;
+import Classes.TCartPos;
+import Classes.TPathDyn;
+import Classes.TTool;
 
 @Root(strict=false) //false = not all fields from XML need to be assigned to RobotData
 @Default(DefaultType.FIELD) //match all variables by field (?)
@@ -28,7 +34,7 @@ public class RobotData implements Cloneable{
     public boolean RobotError = false;
     public short RobotOverride = 0;
     public String RefSysName = "unknown_RefSys";
-    public TTool Tool;
+    public TTool Tool = new TTool();
     public String ToolName = "unknown_Tool";
     public int ToolNumber = 0;
     public int AxisCountMain = 0;
@@ -38,16 +44,23 @@ public class RobotData implements Cloneable{
     public byte[] AxisReferenced = new byte[2];
     public byte[] AxisLSN = new byte[2];
     public byte[] AxisLSP = new byte[2];
-    public TAxisPos AxisPos;
-    public TCartPos CartPosWorld;
-    public TCartPos CartPosRefSys;
-    public TAxisDyn AxisDyn;
-    public TPathDyn PathDyn;
-    public TCartDyn CartDyn;
+    public TAxisPos AxisPos = new TAxisPos();
+    public TCartPos CartPosWorld = new TCartPos();
+    public TCartPos CartPosRefSys = new TCartPos();
+    public TAxisDyn AxisDyn = new TAxisDyn();
+    public TPathDyn PathDyn = new TPathDyn();
+    public TCartDyn CartDyn = new TCartDyn();
     public boolean Error = false;
-    public int ErrorId; //Achtung!!! TRCIFERRORID oder TRCLFERRORID -> I/L <> I/l; war ursprünglich typ TRcIfErrorID
+    public int ErrorId = 0; //Achtung!!! TRCIFERRORID oder TRCLFERRORID -> I/L <> I/l; war ursprünglich typ TRcIfErrorID
 
     /* METHODS */
+
+    public RobotData() {
+        Arrays.fill(this.AxisSimulated, (byte) 0);
+        Arrays.fill(this.AxisReferenced, (byte) 0);
+        Arrays.fill(this.AxisLSN, (byte) 0);
+        Arrays.fill(this.AxisLSP, (byte) 0);
+    }
 
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
@@ -93,28 +106,6 @@ public class RobotData implements Cloneable{
                 "Error: "+Error+"\n"+
                 "ErrorId: "+ErrorId+"\n";
         return DataString;
-    }
-
-    public void copyFrom(RobotData another){
-        /* Variables */
-        this.robOnline = another.robOnline;
-        /* RcIfRobotData */
-        this.RobotName = another.RobotName;
-        this.RobotActive = another.RobotActive;
-        this.RobotReferenced = another.RobotReferenced;
-        this.RobotError = another.RobotError;
-        this.RobotOverride = another.RobotOverride;
-        this.RefSysName = another.RefSysName;
-        this.ToolName = another.ToolName;
-        this.ToolNumber = another.ToolNumber;
-        this.AxisCountMain = another.AxisCountMain;
-        this.AxisCountWrist = another.AxisCountWrist;
-        this.AxisCountAux = another.AxisCountAux;
-        this. AxisSimulated = another.AxisSimulated;
-        this.AxisReferenced = another.AxisReferenced;
-        this.AxisLSN = another.AxisLSN;
-        this.AxisLSP = another.AxisLSP;
-        this.Error = another.Error;
     }
 
     /* DEBUG ONLY */
