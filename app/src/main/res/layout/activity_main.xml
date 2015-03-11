@@ -7,7 +7,7 @@
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/tvAddress" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,8 @@
         android:text="Connect"
         android:id="@+id/buttConnect"
         android:layout_below="@+id/tvConState"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/tvConState"
+        android:layout_alignStart="@+id/tvConState" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,5 +43,15 @@
         android:id="@+id/buttTestFunction"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/etPort"
+        android:layout_above="@+id/tvRobData"
+        android:layout_alignRight="@+id/buttTestFunction"
+        android:layout_alignEnd="@+id/buttTestFunction" />
 
 </RelativeLayout>

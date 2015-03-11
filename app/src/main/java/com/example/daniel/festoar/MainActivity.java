@@ -20,12 +20,14 @@ import java.net.InetSocketAddress;
 public class MainActivity extends ActionBarActivity {
 
     /* CONSTANTS */
-    public static final String Host = "10.50.10.200";
-    public static final int Port = 4508;
+    public static final String Host = "10.50.10.100";
+    public int Port = 4510;
 
     /* VARIABLES */
     private TextView tvConState;
     private TextView tvRobData;
+    private TextView tvAddress;
+    private EditText etPort;
     private String tag = "DEBUG_ONLY";
     MainActivity arg = this;
     RobotData robData = new RobotData();
@@ -37,6 +39,11 @@ public class MainActivity extends ActionBarActivity {
         /* ########## Text Fields ########## */
         tvConState=(TextView)findViewById(R.id.tvConState);
         tvRobData=(TextView)findViewById(R.id.tvRobData);
+        tvAddress=(TextView)findViewById(R.id.tvAddress);
+
+        tvAddress.setText(Host+":"+Port);
+        /* ########## EditText ########## */
+        etPort =(EditText)findViewById(R.id.etPort);
 
          /* ########## Buttons ########## */
 
@@ -47,6 +54,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 RobotThread robotTask = new RobotThread();
+                Port = Integer.parseInt(etPort.getText().toString());
+                tvAddress.setText(Host+":"+Port);
                 robotTask.execute(arg, new InetSocketAddress(Host, Port));
             }
 

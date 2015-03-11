@@ -22,7 +22,7 @@ public class RobotThread extends AsyncTask<Object, Void, RobotData> { //<args, s
 
     /* CONSTANTS */
     public static final int maxTimeout = 1000; //milliseconds
-    public static final int maxBytesRead = 10240; // 10kB
+    public static final int maxBytesRead = 10240+1; // 10kB
     private static final String tag = "DEBUG_ONLY";
 
     /* VARIABLES */
@@ -45,15 +45,17 @@ public class RobotThread extends AsyncTask<Object, Void, RobotData> { //<args, s
                 robData.robOnline = true;
                 robInStream = cliSock.getInputStream();
                 bRead = robInStream.read(data); //read data
+                Log.i(tag, "bytes read: "+bRead+"\n");
                 if(bRead > 0){
                     /* Parse RobotData from XML String */
-                    try{
-                        robData = (RobotData) new XMLParser().XMLStringToRobotData(new String(data, "ISO-8859-1")).clone(); //use .clone() ?
-                    }catch(CloneNotSupportedException e){
+                    //try{
+                        robData = (RobotData) new XMLParser().XMLStringToRobotData(new String(data, "ISO-8859-1")); //use .clone() ?
+                        //Log.i(tag, robData.toString());
+                    /*}catch(CloneNotSupportedException e){
                         //System.out.println("Exception thrown  :" + e);
                         Log.i(tag, e.toString());
                         robData.robOnline = false;
-                    }
+                    }*/
                     //robData.RobotName = new String(data, "ISO-8859-1").trim(); //working charsets: US-ASCII, ISO-8859-1, UTF-8
                     //robData.robOnline = true; //connection successful
                     //Log.i(tag, Integer.toString(robData.RobotName.length()));
