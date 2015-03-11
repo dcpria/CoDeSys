@@ -1,6 +1,11 @@
-<<<<<<< HEAD
 # FestoAR
-=======
-# CoDeSys
-FestoAR CoDeSys Projects
->>>>>>> 69b4c80a5188b0a80a06ad11ddeee9a7ebcc186d
+
+git checkout 
+
+git pull
+
+git add -A 
+
+git commit -m ""
+
+git push origin 
