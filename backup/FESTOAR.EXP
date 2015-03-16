@@ -1,0 +1,3472 @@
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/FestoAR' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION XMLPrinter : STRING
+VAR_INPUT
+END_VAR
+VAR
+	xml : STRING(10240); (* 10kB *)
+END_VAR
+(* @END_DECLARATION := '0' *)
+xml := CONCAT(xml, '<root>');
+xml := CONCAT(xml, '<RobotName>');
+xml := CONCAT(xml, FBRobotData.RobotName);
+xml := CONCAT(xml, '</RobotName>');
+xml := CONCAT(xml, '<RobotActive>');
+xml := CONCAT(xml, BOOL_TO_STRING(FBRobotData.RobotActive));
+xml := CONCAT(xml, '</RobotActive>');
+xml := CONCAT(xml, '<RobotReferenced>');
+xml := CONCAT(xml, BOOL_TO_STRING(FBRobotData.RobotReferenced));
+xml := CONCAT(xml, '</RobotReferenced>');
+xml := CONCAT(xml, '<RobotError>');
+xml := CONCAT(xml, BOOL_TO_STRING(FBRobotData.RobotError));
+xml := CONCAT(xml, '</RobotError>');
+xml := CONCAT(xml, '<RobotOverride>');
+xml := CONCAT(xml, INT_TO_STRING(FBRobotData.RobotOverride));
+xml := CONCAT(xml, '</RobotOverride>');
+xml := CONCAT(xml, '<RefSysName>');
+xml := CONCAT(xml, FBRobotData.RefSysName);
+xml := CONCAT(xml, '</RefSysName>');
+xml := CONCAT(xml, '<RefSysNumber>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.RefSysNumber));
+xml := CONCAT(xml, '</RefSysNumber>');
+xml := CONCAT(xml, '<Tool>');
+xml := CONCAT(xml, '<x>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.x));
+xml := CONCAT(xml, '</x>');
+xml := CONCAT(xml, '<y>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.y));
+xml := CONCAT(xml, '</y>');
+xml := CONCAT(xml, '<z>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.z));
+xml := CONCAT(xml, '</z>');
+xml := CONCAT(xml, '<a>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.a));
+xml := CONCAT(xml, '</a>');
+xml := CONCAT(xml, '<b>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.b));
+xml := CONCAT(xml, '</b>');
+xml := CONCAT(xml, '<c>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.Tool.c));
+xml := CONCAT(xml, '</c>');
+xml := CONCAT(xml, '</Tool>');
+xml := CONCAT(xml, '<ToolName>');
+xml := CONCAT(xml, FBRobotData.ToolName);
+xml := CONCAT(xml, '</ToolName>');
+xml := CONCAT(xml, '<ToolNumber>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.ToolNumber));
+xml := CONCAT(xml, '</ToolNumber>');
+xml := CONCAT(xml, '<AxisCountMain>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.AxisCountMain));
+xml := CONCAT(xml, '</AxisCountMain>');
+xml := CONCAT(xml, '<AxisCountWrist>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.AxisCountWrist));
+xml := CONCAT(xml, '</AxisCountWrist>');
+xml := CONCAT(xml, '<AxisCountAux>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.AxisCountAux));
+xml := CONCAT(xml, '</AxisCountAux>');
+xml := CONCAT(xml, '<AxisSimulated>');
+xml := CONCAT(xml, WORD_TO_STRING(FBRobotData.AxisSimulated));
+xml := CONCAT(xml, '</AxisSimulated>');
+xml := CONCAT(xml, '<AxisReferenced>');
+xml := CONCAT(xml, WORD_TO_STRING(FBRobotData.AxisReferenced));
+xml := CONCAT(xml, '</AxisReferenced>');
+xml := CONCAT(xml, '<AxisLSN>');
+xml := CONCAT(xml, WORD_TO_STRING(FBRobotData.AxisLSN));
+xml := CONCAT(xml, '</AxisLSN>');
+xml := CONCAT(xml, '<AxisLSP>');
+xml := CONCAT(xml, WORD_TO_STRING(FBRobotData.AxisLSP));
+xml := CONCAT(xml, '</AxisLSP>');
+xml := CONCAT(xml, '<AxisPos>');
+xml := CONCAT(xml, '<a1>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a1));
+xml := CONCAT(xml, '</a1>');
+xml := CONCAT(xml, '<a2>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a2));
+xml := CONCAT(xml, '</a2>');
+xml := CONCAT(xml, '<a3>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a3));
+xml := CONCAT(xml, '</a3>');
+xml := CONCAT(xml, '<a4>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a4));
+xml := CONCAT(xml, '</a4>');
+xml := CONCAT(xml, '<a5>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a5));
+xml := CONCAT(xml, '</a5>');
+xml := CONCAT(xml, '<a6>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.a6));
+xml := CONCAT(xml, '</a6>');
+xml := CONCAT(xml, '<aux1>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.aux1));
+xml := CONCAT(xml, '</aux1>');
+xml := CONCAT(xml, '<aux2>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.aux2));
+xml := CONCAT(xml, '</aux2>');
+xml := CONCAT(xml, '<aux3>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisPos.aux3));
+xml := CONCAT(xml, '</aux3>');
+xml := CONCAT(xml, '</AxisPos>');
+xml := CONCAT(xml, '<CartPosWorld>');
+xml := CONCAT(xml, '<x>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.x));
+xml := CONCAT(xml, '</x>');
+xml := CONCAT(xml, '<y>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.y));
+xml := CONCAT(xml, '</y>');
+xml := CONCAT(xml, '<z>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.z));
+xml := CONCAT(xml, '</z>');
+xml := CONCAT(xml, '<a>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.a));
+xml := CONCAT(xml, '</a>');
+xml := CONCAT(xml, '<b>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.b));
+xml := CONCAT(xml, '</b>');
+xml := CONCAT(xml, '<c>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.c));
+xml := CONCAT(xml, '</c>');
+xml := CONCAT(xml, '<aux1>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.aux1));
+xml := CONCAT(xml, '</aux1>');
+xml := CONCAT(xml, '<aux2>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.aux2));
+xml := CONCAT(xml, '</aux2>');
+xml := CONCAT(xml, '<aux3>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosWorld.aux3));
+xml := CONCAT(xml, '</aux3>');
+xml := CONCAT(xml, '</CartPosWorld>');
+xml := CONCAT(xml, '<CartPosRefSys>');
+xml := CONCAT(xml, '<x>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.x));
+xml := CONCAT(xml, '</x>');
+xml := CONCAT(xml, '<y>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.y));
+xml := CONCAT(xml, '</y>');
+xml := CONCAT(xml, '<z>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.z));
+xml := CONCAT(xml, '</z>');
+xml := CONCAT(xml, '<a>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.a));
+xml := CONCAT(xml, '</a>');
+xml := CONCAT(xml, '<b>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.b));
+xml := CONCAT(xml, '</b>');
+xml := CONCAT(xml, '<c>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.c));
+xml := CONCAT(xml, '</c>');
+xml := CONCAT(xml, '<aux1>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.aux1));
+xml := CONCAT(xml, '</aux1>');
+xml := CONCAT(xml, '<aux2>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.aux2));
+xml := CONCAT(xml, '</aux2>');
+xml := CONCAT(xml, '<aux3>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartPosRefSys.aux3));
+xml := CONCAT(xml, '</aux3>');
+xml := CONCAT(xml, '</CartPosRefSys>');
+xml := CONCAT(xml, '<AxisDyn>');
+xml := CONCAT(xml, '<a1>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a1.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a1.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a1.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a1>');
+xml := CONCAT(xml, '<a2>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a2.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a2.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a2.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a2>');
+xml := CONCAT(xml, '<a3>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a3.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a3.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a3.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a3>');
+xml := CONCAT(xml, '<a4>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a4.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a4.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a4.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a4>');
+xml := CONCAT(xml, '<a5>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a5.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a5.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a5.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a5>');
+xml := CONCAT(xml, '<a6>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a6.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a6.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.a6.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a6>');
+xml := CONCAT(xml, '<aux1>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux1.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux1.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux1.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux1>');
+xml := CONCAT(xml, '<aux2>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux2.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux2.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux2.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux2>');
+xml := CONCAT(xml, '<aux3>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux3.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux3.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.AxisDyn.aux3.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux3>');
+xml := CONCAT(xml, '</AxisDyn>');
+xml := CONCAT(xml, '<PathDyn>');
+xml := CONCAT(xml, '<Path>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Path.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Path.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Path.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</Path>');
+xml := CONCAT(xml, '<Ori>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Ori.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Ori.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.PathDyn.Ori.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</Ori>');
+xml := CONCAT(xml, '</PathDyn>');
+xml := CONCAT(xml, '<CartDyn>');
+xml := CONCAT(xml, '<x>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.x.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.x.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.x.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</x>');
+xml := CONCAT(xml, '<y>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.y.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.y.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.y.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</y>');
+xml := CONCAT(xml, '<z>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.z.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.z.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.z.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</z>');
+xml := CONCAT(xml, '<a>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.a.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.a.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.a.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</a>');
+xml := CONCAT(xml, '<b>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.b.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.b.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.b.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</b>');
+xml := CONCAT(xml, '<c>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.c.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.c.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.c.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</c>');
+xml := CONCAT(xml, '<aux1>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux1.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux1.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux1.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux1>');
+xml := CONCAT(xml, '<aux2>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux2.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux2.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux2.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux2>');
+xml := CONCAT(xml, '<aux3>');
+xml := CONCAT(xml, '<vel>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux3.vel));
+xml := CONCAT(xml, '</vel>');
+xml := CONCAT(xml, '<acc>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux3.acc));
+xml := CONCAT(xml, '</acc>');
+xml := CONCAT(xml, '<jerk>');
+xml := CONCAT(xml, REAL_TO_STRING(FBRobotData.CartDyn.aux3.jerk));
+xml := CONCAT(xml, '</jerk>');
+xml := CONCAT(xml, '</aux3>');
+xml := CONCAT(xml, '</CartDyn>');
+xml := CONCAT(xml, '<Error>');
+xml := CONCAT(xml, BOOL_TO_STRING(FBRobotData.Error));
+xml := CONCAT(xml, '</Error>');
+xml := CONCAT(xml, '<ErrorId>');
+xml := CONCAT(xml, DINT_TO_STRING(FBRobotData.ErrorId));
+xml := CONCAT(xml, '</ErrorId>');
+xml := CONCAT(xml, '</root>');
+
+XMLPrinter := xml;
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/RcInterface' *)
+(* @OBJECTFLAGS := '8, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+(****************************************************************************************************************
+     FESTO AG  Co., Esslingen                                                    								
+     Copyright (c) 2009. All rights reserved.                       
+
+  
+ Project Name:   fct-codesys.pro 
+ Description:    Base project generated by FCT to use with CMXR-C2
+ Composer:       FESTO
+ Version:        00.01.03
+ Last Change:    17.07.2012                                                                           
+****************************************************************************************************************)
+
+(****************************************************************************************************************
+Change History
+
+Date          Name                      Activity                                          Version                                                                  
+                                                                                          
+27.07.2009    bejk                      created                                           00.01.00
+31.08.2011    bejk                      update to CMXR-C2 V1.01                           00.01.01
+01.12.2011    bejk                      update RC_INTERFACE (PRG)                         00.01.02
+17.07.2012    bejk                      Base Project for Target V01.11                    00.01.03
+****************************************************************************************************************)
+
+(* @END_DECLARATION := '0' *)
+;
+END_PROGRAM
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/RcInterface' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM RC_INTERFACE
+VAR
+(****************************************************************************************************************
+     FESTO AG  Co., Esslingen                                                    								
+     Copyright (c) 2009. All rights reserved.                       
+
+  
+ Program Name:   RC_INTERFACE 
+ Description:    Programm for CoDeSys Controlinterface
+ Composer:       FESTO
+ Version:        00.01.02
+ Last Change:    01.12.2011                                                                           
+****************************************************************************************************************)
+(* System Program please do not change *)
+
+(****************************************************************************************************************
+Change History
+
+Date          Name                      Activity                                          Version                                                                  
+                                                                                          
+27.01.2010    bejk                      created                                           00.01.01
+01.12.2011    bejk                      updated                                           00.01.02
+
+****************************************************************************************************************)
+END_VAR
+(* @END_DECLARATION := '0' *)
+_FBD_BODY
+_NETWORKS : 17
+_NETWORK
+(* RC_INTERFACE(PRG) *)
+_COMMENT
+'Please do not change the system program, use the global instance variables to access the RC-Interface functions$R$N'
+_END_COMMENT
+_FUNCTIONBLOCK
+FBRobotUpdateGlobal
+_BOX_EXPR : 0
+_EXPRESSION
+_POSITIV
+RcIfRobotUpdateGlobal
+_OUTPUTS : 0
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBRobotUpdateLocal
+_BOX_EXPR : 1
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_EXPRESSION
+_POSITIV
+RcIfRobotUpdateLocal
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+(* Roboter local Function blocks *)
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBRobotData
+_BOX_EXPR : 1
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_EXPRESSION
+_POSITIV
+RcIfRobotData
+_OUTPUTS : 24
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBModeControl
+_BOX_EXPR : 6
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfModeControl
+_OUTPUTS : 6
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBWriteAccess
+_BOX_EXPR : 2
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfWriteAccess
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBJogControl
+_BOX_EXPR : 7
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfJogControl
+_OUTPUTS : 6
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBProgramControl
+_BOX_EXPR : 6
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfProgramControl_V2
+_OUTPUTS : 9
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBOverride
+_BOX_EXPR : 2
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfOverride
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBSetRefSys
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfSetRefSys
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBSetTool
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+0
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfSetTool
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+(* Roboter global Function blocks *)
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBMsgRead
+_BOX_EXPR : 2
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfMsgRead
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBMsgSet
+_BOX_EXPR : 8
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfMsgSet
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBMsgQuit
+_BOX_EXPR : 1
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfMsgQuit
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBRegAxisPos
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfRegAxisPos
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBRegCartPos
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+RcIfRegCartPos
+_OUTPUTS : 2
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+(* CDSA Functions *)
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBCDSAIfGetKeys
+_BOX_EXPR : 0
+_EXPRESSION
+_POSITIV
+CDSAIfGetKeys
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_FUNCTIONBLOCK
+FBCDSAIfSetProcessLed
+_BOX_EXPR : 3
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_OPERAND
+_EXPRESSION
+_POSITIV
+_EMPTY
+_EXPRESSION
+_POSITIV
+CDSAIfSetProcessLed
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+_EMPTY
+
+END_PROGRAM
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/RcInterface' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION RC_OUTPUT_UPDATE : DWORD
+VAR_INPUT
+	dwEvent:DWORD;
+	dwFilter:DWORD;
+	dwOwner:DWORD;
+END_VAR
+(* @END_DECLARATION := '0' *)
+IF NOT RcIfIosMapped THEN
+	RcIfIosMapped := TRUE;
+
+END_IF;
+
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Tcp specific' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+FUNCTION TcpReceiveData : DINT
+(*	Receive data from a tcp socket.
+	Return:	Number of bytes received
+*)
+VAR_INPUT
+	diSocket:DINT;		(* Socket Id *)
+	pbyData:DWORD;		(* Address of data buffer *)
+	diDataSize:DINT;		(* Size of data to send *)
+	diTImeout : DINT;		(* Timeout in seconds *)
+END_VAR
+VAR
+	fdRead:SOCKET_FD_SET;
+	tvTimeout:SOCKET_TIMEVAL;
+END_VAR
+(* @END_DECLARATION := '0' *)
+tvTimeout.tv_sec := diTimeout ;
+tvTimeout.tv_usec := 0;
+fdRead.fd_count := 1;
+fdRead.fd_array[0] := diSocket;
+IF (SysSockSelect(SOCKET_FD_SETSIZE, ADR(fdRead), 0, 0, ADR(tvTimeout)) > 0) THEN
+	TcpReceiveData:=SysSockRecv(diSocket, pbyData, diDataSize, 0);
+END_IF
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Tcp specific' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+FUNCTION TcpSendData : DINT
+(*	Send data via TCP socket.
+	Return:	Number of bytes sent
+*)
+VAR_INPUT
+	diSocket:DINT;		(* Socket Id *)
+	pbyData:DWORD;		(* Address of data buffer *)
+	diDataSize:DINT;		(* Size of data to send *)
+	diTimeout : DINT;		(* Timeout in seconds *)
+END_VAR
+VAR
+	fdWrite:SOCKET_FD_SET;
+	tvTimeout:SOCKET_TIMEVAL;
+END_VAR
+(* @END_DECLARATION := '0' *)
+tvTimeout.tv_sec := diTimeout ;
+tvTimeout.tv_usec := 0;
+fdWrite.fd_count := 1;
+fdWrite.fd_array[0] := diSocket;
+IF (SysSockSelect(SOCKET_FD_SETSIZE, 0, ADR(fdWrite), 0, ADR(tvTimeout)) > 0) THEN
+	TcpSendData:=SysSockSend(diSocket, pbyData, diDataSize, 0);
+END_IF
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Tcp specific' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+FUNCTION TcpServerOpenSocket : DINT
+(*	Open a TCP server socket.
+	Return:	Main Socket Id
+*)
+VAR_INPUT
+	iPort:INT;						(* Port number *)
+	diMaxConnections:DINT;		(* Max possible client connections of the server *)
+	diMaxDataSize:DINT;			(* Max size of data to transmitt; if size = 0 default values are used *)
+END_VAR
+VAR
+	diSocket:DINT;
+	bResult:BOOL;
+	sa:SOCKADDRESS;
+	bOptNoDelay:BOOL;
+	lOptLinger:SOCKET_LINGER;
+END_VAR
+(* @END_DECLARATION := '0' *)
+diSocket:=SysSockCreate(SOCKET_AF_INET, SOCKET_STREAM, SOCKET_IPPROTO_TCP);
+IF diSocket <> SOCKET_INVALID THEN
+(*
+	IF diMaxDataSize <> 0 THEN
+		SysSockSetOption(diSocket, SOCKET_SOL, SOCKET_SO_SNDBUF, ADR(diMaxDataSize), SIZEOF(diMaxDataSize));
+		SysSockSetOption(diSocket, SOCKET_SOL, SOCKET_SO_RCVBUF, ADR(diMaxDataSize), SIZEOF(diMaxDataSize));
+	END_IF
+	lOptLinger.l_onoff:=0;
+	lOptLinger.l_linger:=0;
+	SysSockSetOption(diSocket,	SOCKET_SOL, SOCKET_SO_LINGER, ADR(lOptLinger), SIZEOF(lOptLinger));
+	bOptNoDelay:=TRUE;
+	SysSockSetOption(diSocket,	SOCKET_IPPROTO_TCP, SOCKET_TCP_NODELAY, ADR(bOptNoDelay), SIZEOF(bOptNoDelay));
+*)
+
+	sa.sin_family:=SOCKET_AF_INET;
+	sa.sin_addr:=SOCKET_INADDR_ANY;
+	sa.sin_port:=SysSockHtons(iPort);
+	bResult:=SysSockBind(diSocket, ADR(sa), SIZEOF(sa));
+	IF bResult = FALSE THEN
+		diSocket:=SOCKET_INVALID;
+	ELSE
+		bResult:=SysSockListen(diSocket, diMaxConnections);
+		IF bResult = FALSE THEN
+			diSocket:=SOCKET_INVALID;
+		END_IF
+	END_IF
+END_IF
+TcpServerOpenSocket:=diSocket;
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Tcp specific' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+FUNCTION TcpServerWaitForConnect : CLIENT_ACCEPT
+(*	Wait for a TCP client to connect.
+	ATTENTION:  Function is blocking, until a client tries to connect!
+	Return:	diSocket : Socket Id for connection session
+				stIPAddress : IP-Address of connected client
+*)
+VAR_INPUT
+	diServerSocket:DINT;
+	diTimeout : DINT;	(* Timeout in seconds *)
+END_VAR
+VAR
+	sa:SOCKADDRESS;
+	ia:INADDR;
+	diSize:DINT;
+	fdRead: SOCKET_FD_SET;
+	fdWrite:SOCKET_FD_SET;
+	fdExcept:SOCKET_FD_SET;
+	tvTimeout:SOCKET_TIMEVAL;
+END_VAR
+(* @END_DECLARATION := '0' *)
+tvTimeout.tv_sec := diTimeout ;
+tvTimeout.tv_usec := 0;
+fdRead.fd_count := 1;
+fdRead.fd_array[0] := diServerSocket;
+IF (SysSockSelect(SOCKET_FD_SETSIZE, ADR(fdRead), 0, 0, ADR(tvTimeout)) > 0) THEN
+	diSize:=SIZEOF(sa);
+	TcpServerWaitForConnect.diSocket:=SysSockAccept(diServerSocket, ADR(sa), ADR(diSize));
+	ia.S_addr:=UDINT_TO_DWORD(sa.sin_addr); (* Daniel: DINT_TO_DWORD -> UDINT_TO_DWORD *)
+	SysSockInetNtoa(ia, TcpServerWaitForConnect.stIPAddress, SIZEOF(TcpServerWaitForConnect.stIPAddress));
+ELSE
+	TcpServerWaitForConnect.diSocket := -1;
+END_IF
+END_FUNCTION
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '59392' *)
+PROGRAM MAIN
+VAR_IN_OUT
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := '0' *)
+_CFC_BODY
+_ELEMENT
+_ID: 1
+_MACROID: -1
+_POS: 2, 2
+_TYPE: _COMMENT
+_TEXT: (* Add user Code here *)
+_END
+
+END_PROGRAM
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM RC_STANDALONE
+(****************************************************************************************************************
+     FESTO AG  Co., Esslingen                                                    								
+     Copyright (c) 2009. All rights reserved.                       
+
+  
+ Program Name:   RC_STANDALONE 
+ Description:    Example Programm how to use CMXR RC-Interface (variant standalone)
+ Composer:       FESTO
+ Version:        00.01.01
+ Last Change:    31.08.2011                                                                           
+****************************************************************************************************************)
+(* Example Project how to use the RC-Interface *)
+
+(****************************************************************************************************************
+Change History
+
+Date          Name                      Activity                                          Version                                                                  
+                                                                                          
+12.01.2010    bejk                      created                                           00.01.00
+31.08.2011    bejk                      Bugfix FBRobotData.RobotError                     00.01.01
+****************************************************************************************************************)
+VAR
+END_VAR
+(* @END_DECLARATION := '0' *)
+_CFC_BODY
+_ELEMENT
+_ID: 1
+_MACROID: -1
+_POS: 18, 3
+_TYPE: _COMMENT
+_TEXT: Digital Inputs --> RC_INTERFACE
+_END
+_ELEMENT
+_ID: 2
+_MACROID: -1
+_POS: 16, 6
+_TYPE: _INPUT
+_TEXT: dinEmStop
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 3
+_MACROID: -1
+_POS: 29, 6
+_TYPE: _OUTPUT
+_TEXT: FBModeControl.EmergencyStop
+_INPUTID: 2
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 4
+_MACROID: -1
+_POS: 17, 7
+_TYPE: _INPUT
+_TEXT: dinEnabling
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 5
+_MACROID: -1
+_POS: 17, 8
+_TYPE: _INPUT
+_TEXT: dinAutoSelect
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 6
+_MACROID: -1
+_POS: 17, 9
+_TYPE: _INPUT
+_TEXT: dinManSelect
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 12
+_MACROID: -1
+_POS: 23, 17
+_TYPE: _INPUT
+_TEXT: FBModeControl.ManualActive
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 13
+_MACROID: -1
+_POS: 21, 18
+_TYPE: _INPUT
+_TEXT: FBRobotData.RobotError
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 16
+_MACROID: -1
+_POS: 28, 7
+_TYPE: _OUTPUT
+_TEXT: FBModeControl.EnablingSwitch
+_INPUTID: 4
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 17
+_MACROID: -1
+_POS: 30, 8
+_TYPE: _OUTPUT
+_TEXT: FBModeControl.SetAutoMode
+_INPUTID: 5
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 18
+_MACROID: -1
+_POS: 29, 9
+_TYPE: _OUTPUT
+_TEXT: FBModeControl.SetManualMode
+_INPUTID: 6
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 24
+_MACROID: -1
+_POS: 34, 17
+_TYPE: _OUTPUT
+_TEXT: doutManSelected
+_INPUTID: 12
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 25
+_MACROID: -1
+_POS: 36, 18
+_TYPE: _OUTPUT
+_TEXT: doutError
+_INPUTID: 13
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 34
+_MACROID: -1
+_POS: 22, 16
+_TYPE: _INPUT
+_TEXT: FBModeControl.AutoActive
+_NEGATE: 0
+_CONNECTOR: 
+_END
+_ELEMENT
+_ID: 35
+_MACROID: -1
+_POS: 33, 16
+_TYPE: _OUTPUT
+_TEXT: doutAutoSelected
+_INPUTID: 34
+_INPUTIDX: 0
+_NEGATE: 0
+_SETRESET: _NONE
+_END
+_ELEMENT
+_ID: 46
+_MACROID: -1
+_POS: 18, 13
+_TYPE: _COMMENT
+_TEXT: RC_INTERFACE --> Digital Outputs
+_END
+
+END_PROGRAM
+
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM TCPServer
+VAR
+	diSocket : DINT := -1;
+	iPort : INT:=4508;
+	Client : CLIENT_ACCEPT := (diSocket := -1);
+	bySend : ARRAY[0..10] OF BYTE := 0,1,2,3,4,5,6,7,8,9,10;
+	byData : STRING(10240); (* 10kB *)
+	byRecv : ARRAY[0..14] OF BYTE;
+	Reply : CLIENT_REPLY;
+	bCloseClient: BOOL;
+	bActive: BOOL:= TRUE;
+END_VAR
+(* @END_DECLARATION := '0' *)
+byData := XMLPrinter();
+IF bActive THEN
+	IF diSocket = -1 THEN
+		diSocket := TcpServerOpenSocket(iPort, 10, 1000);
+	END_IF
+
+	IF  Client.diSocket = -1 THEN
+		Client := TcpServerWaitForConnect(diSocket, 4);
+	END_IF
+
+	IF  Client.diSocket <> -1 THEN
+		TcpSendData(Client.diSocket, ADR(byData), SIZEOF(byData), 1);
+		(*TcpReceiveData(Client.diSocket, ADR(byRecv), SIZEOF(byRecv), 5);*)
+		bCloseClient := TRUE;
+	END_IF
+
+	IF bCloseClient THEN
+		bCloseClient := FALSE;
+		SysSockClose(diSocket:=Client.diSocket);
+		Client.diSocket := -1;
+	END_IF
+END_IF
+END_PROGRAM
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE CLIENT_ACCEPT :
+STRUCT
+	diSocket:DINT;
+	stIPAddress:STRING(20);
+END_STRUCT
+END_TYPE
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE CLIENT_REPLY :
+STRUCT
+	diBytesReceived:DINT;
+	stIPAddressTransmitter:STRING(20);
+END_STRUCT
+END_TYPE
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE ROBOT_DATA :
+STRUCT
+(* RcIfRobotData *)
+	RobotName : STRING(80);
+	RobotActive : BOOL;
+	RobotReferenced : BOOL;
+	RobotError : BOOL;
+	RobotOverride : INT;
+	RefSysName : STRING(80);
+	RefSysNumber : DINT;
+	Tool : TTool;
+	ToolName : STRING(80);
+	ToolNumber : DINT;
+	AxisCountMain : DINT;
+	AxisCountWrist : DINT;
+	AxisCountAux : DINT;
+	AxisSimulated : WORD;
+	AxisReferenced : WORD;
+	AxisLSN : WORD;
+	AxisLSP : WORD;
+	AxisPos : TAxisPos;
+	CartPosWorld : TCARTPOS;
+	CartPosRefSys : TCartPos;
+	AxisDyn : TAxisDyn;
+	PathDyn : TPathDyn;
+	CartDyn : TCartDyn;
+	Error : BOOL;
+	ErrorId : TRcIfErrorID;
+END_STRUCT
+END_TYPE
+(* @END_DECLARATION := '0' *)
+
+(* @PATH := '\/RcInterface' *)
+
+VISUALISATION VISU_CDSA _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 2
+_PAINTZOOM : 100
+
+_REF : 'VIS_CDSAIfGetKeys'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBCDSAIfGetKeys
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,526,331,263,165
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,0,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_CDSAIfSetProcessLed'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBCDSAIfSetProcessLed
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 525,0,856,166,690,83
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,1,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @PATH := '\/RcInterface' *)
+
+VISUALISATION VISU_RegAccess _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 16
+_PAINTZOOM : 100
+
+_REF : 'VIS_RcIfRegCartPos'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBRegCartPos
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 320,0,641,371,480,185
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,9,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfBoolArray0_15'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBBoolArray0_15
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 600,370,781,761,690,565
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,13,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfBoolArray16_31'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBBoolArray16_31
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 780,370,961,761,870,565
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,14,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfRegAxisPos'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBRegAxisPos
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,321,367,160,183
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,1,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,15,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @PATH := '\/RcInterface' *)
+
+VISUALISATION VISU_RobotAxis _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 13
+_PAINTZOOM : 100
+
+_REF : 'VIS_RcIfJogControl'
+NUM_STRINGS_IN_LIST: 1
+Inst
+NUM_STRINGS_IN_LIST: 1
+.FBJogControl
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 485,110,591,411,538,260
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,5,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,0,591,151,538,75
+_COLORS : 16185078,16185078,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,8,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfRobotData'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBRobotData
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,491,411,245,205
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,1,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,10,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfSetRefSys'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBSetRefSys
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 590,0,891,161,740,80
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,11,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfSetTool'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBSetTool
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 590,160,891,321,740,240
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,12,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @PATH := '\/RcInterface' *)
+
+VISUALISATION VISU_RobotControl _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 9
+_PAINTZOOM : 100
+
+_REF : 'VIS_RcIfOverride'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBOverride
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,165,386,261,193,213
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,0,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfWriteAccess'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBWriteAccess
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,115,386,231,193,173
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,1,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfModeControl'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBModeControl
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,386,181,193,90
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,3,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfProgramControl_V2'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBProgramControl
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 385,0,771,261,578,130
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,4,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @PATH := '\/RcInterface' *)
+
+VISUALISATION VISU_RobotMessage _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 26
+_PAINTZOOM : 100
+
+_REF : 'VIS_RcIfMsgRead'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBMsgRead
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,761,381,380,190
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,1,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,15,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfMsgSet'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBMsgSet
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,385,386,646,193,515
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,1,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,17,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'VIS_RcIfMsgQuit'
+NUM_STRINGS_IN_LIST: 1
+INST
+NUM_STRINGS_IN_LIST: 1
+.FBMsgQuit
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 380,0,761,146,570,73
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,1,0
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,18,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'CanOpen implicit Variables' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+VAR_GLOBAL CONSTANT
+	MAX_CTRLINDEX : INT := 0;
+END_VAR
+VAR_GLOBAL CONSTANT
+	USE_CANOPEN_NODES : BOOL := FALSE;
+	MAX_MASTERINDEX : INT := 0;
+	MAX_NODEINDEX : INT := 0;
+	MAX_SDOINDEX : INT := 0;
+	MAX_PDOINDEX_RX : INT := 0;
+	MAX_PDOINDEX_TX : INT := 0;
+	MAX_MASTER_ODENTRY_IDX : INT := 0;
+END_VAR
+VAR_GLOBAL
+	pCANopenMaster : ARRAY[0..MAX_MASTERINDEX] OF CanOpenMaster;
+	pCanOpenNode : ARRAY[0..MAX_NODEINDEX] OF CanOpenNode;
+	pCanOpenSDO : ARRAY[0..MAX_SDOINDEX] OF CanOpenSDO;
+	pCanOpenPDO_Rx : ARRAY[0..MAX_PDOINDEX_RX] OF CanOpenPDO_Rx;
+	pCanOpenPDO_Tx : ARRAY[0..MAX_PDOINDEX_TX] OF CanOpenPDO_Tx;
+	 ODMEntries: ARRAY[0..MAX_MASTER_ODENTRY_IDX] OF CanOpenODEntry;
+END_VAR
+
+(* @OBJECT_END := 'CanOpen implicit Variables' *)
+(* @CONNECTIONS := CanOpen implicit Variables
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'Global_Variables' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+VAR_GLOBAL
+	TCPServerOnline: BOOL;
+	SocketSrv: DINT;
+	SocketCli: DINT;
+	DataRcv: ARRAY[0..13] OF BYTE;
+	RcvPacketCount: DINT;
+	NbRcvBytes: DINT;
+	DataSend: ARRAY[0..7] OF BYTE := 1,2,3,4,3,2,1,0;
+	ReadDone: BOOL;
+	ReadBusy: BOOL;
+	Client : CLIENT_ACCEPT;
+	RobotData: ROBOT_DATA;
+END_VAR
+
+(* @OBJECT_END := 'Global_Variables' *)
+(* @CONNECTIONS := Global_Variables
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'RC_INTERFACE_INSTANCES' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+VAR_GLOBAL
+(* Global Instances of RC_INTERFACE(PRG)                 *)
+(* CDSA *)
+	FBCDSAIfGetKeys          : CDSAIfGetKeys;
+	FBCDSAIfSetProcessLed    : CDSAIfSetProcessLed;
+(* Roboter Global *)
+	FBRobotUpdateGlobal      : RcIfRobotUpdateGlobal;
+	FBMsgRead                : RcIfMsgRead;
+	FBMsgSet                 : RcIfMsgSet;
+	FBMsgQuit                : RcIfMsgQuit;
+	FBRegAxisPos             : RcIfRegAxisPos;
+	FBRegCartPos             : RcIfRegCartPos;
+(* Roboter Local *)
+	FBRobotUpdateLocal       : RcIfRobotUpdateLocal;
+	FBModeControl            : RcIfModeControl;
+	FBRobotData              : RcIfRobotData;
+	FBWriteAccess            : RcIfWriteAccess;
+	FBJogControl             : RcIfJogControl;
+	FBProgramControl         : RcIfProgramControl_V2;
+	FBOverride               : RcIfOverride;
+	FBSetRefSys              : RcIfSetRefSys;
+	FBSetTool                : RcIfSetTool;
+(*-------------------------------------------------------*)
+END_VAR
+
+(* @OBJECT_END := 'RC_INTERFACE_INSTANCES' *)
+(* @CONNECTIONS := RC_INTERFACE_INSTANCES
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'RC_OUTPUT_VARIABLES' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+VAR_GLOBAL
+END_VAR
+
+(* @OBJECT_END := 'RC_OUTPUT_VARIABLES' *)
+(* @CONNECTIONS := RC_OUTPUT_VARIABLES
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'Variable_Configuration' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+VAR_CONFIG
+END_VAR
+
+(* @OBJECT_END := 'Variable_Configuration' *)
+(* @CONNECTIONS := Variable_Configuration
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)
+
+
+LIBRARY
+3S_CanDrv.lib 10.6.10 10:53:10
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 6
+Can_GetStatus: 0
+Can_GetVersion_23001: 2048
+Can_Init: 0
+Can_Read: 0
+Can_SetFilter: 0
+Can_Write: 0
+NumOfGVLs: 1
+GlobaleConstant: 0
+END_LIBRARY
+
+LIBRARY
+3S_CANOpenManager.lib 21.11.11 09:12:46
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 13
+CanOpenPDO_Rx: 2048
+CanOpenPDO_Rx.SendRTRFrame: 2048
+CanOpenPDO_Tx: 2048
+CanOpenSendSDO: 2048
+CanOpenSendSDO.HandleSDODownload: 2048
+CanOpenSendSDO.HandleSDOUpload: 2048
+CanOpenWriteMSG_FB: 2048
+IECbytecmp: 2048
+IECbytecopy: 2048
+MgrClearRxBuffer: 2048
+MgrFindNewestRecMessage: 2048
+MgrFindRecMessage: 2048
+MgrResetMessageBuffers: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+3S_CANOpenMaster.lib 18.2.11 10:56:50
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 26
+CallbackCanOpenBefRes: 0
+CallbackCanOpenDbgLoop: 0
+CallbackCanOpenStop: 0
+CallbackCanOpenTaskNC: 0
+CanOpen_Callback: 0
+CanOpenMaster: 2048
+CanOpenMaster.HandleSDOClientRequests: 2048
+CanOpenMaster.HandleSDOReadRq: 2048
+CanOpenMaster.HandleSDOWriteRq: 2048
+CanOpenMaster.StartAllNodes: 2048
+CanOpenNode: 0
+CanOpenNode.CallAllPDOs: 2048
+CanOpenNode.EnableDisablePDOs: 2048
+CanOpenNode.NodeReset: 0
+CanOpenNode.NodeRx_Msg: 0
+CanOpenNode.NodeSetTimeoutState: 0
+CanOpenNode.NodeStart: 0
+CanOpenNode.NodeStop: 2048
+CanOpenNode.SetNodeStatus: 2048
+ClearOutputs: 0
+EnablePDOs: 0
+FindInODMEntries: 2048
+GetODMEntryDataAddress: 2048
+GetODMEntryDataLen: 2048
+GetODMEntryValue: 2048
+SetODMEntryValue: 2048
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+ANALYZATION.LIB 5.10.99 10:05:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 2
+AnalyzeExpression: 0
+AppendErrorString: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+IECSFC.LIB 13.4.06 15:51:28
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 1
+SFCActionControl: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+KAAD.lib 10.6.10 10:53:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 6
+KAAD_GetSession: 2048
+KAAD_GetSessions: 2048
+KAAD_GetUserAttrs: 2048
+KAAD_GetUserName: 2048
+KAAD_Login: 2048
+KAAD_Logout: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+KDiagFunctions.lib 10.6.10 10:53:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 7
+TestAndSet: 2048
+TestOut: 2048
+TestRandom: 2048
+TestRandomDWORD: 2048
+TestRandomInit: 2048
+TestRandomLREAL: 2048
+TestSetWVEvent: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+KMSG.lib 10.6.10 10:53:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 15
+KMSG_GetFirstMsg: 2048
+KMSG_GetLanguage: 2048
+KMSG_GetLastMsg: 2048
+KMSG_GetMsgDataValues: 2048
+KMSG_GetMsgString: 2048
+KMSG_GetNextMsg: 2048
+KMSG_GetNrMsgs: 2048
+KMSG_GetPrevMsg: 2048
+KMSG_internal_01: 2048
+KMSG_internal_02: 2048
+KMSG_internal_03: 2048
+KMSG_internal_04: 2048
+KMSG_QuitMsg: 2048
+KMSG_SetLanguage: 2048
+KMSG_SetMsg: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+KSWO.lib 10.6.10 10:53:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 6
+KSWO_AddEventTracer: 2048
+KSWO_AddVariable: 2048
+KSWO_LibVarType_To_SwoVarType: 2048
+KSWO_RaiseEvent: 2048
+KSWO_RemoveVariable: 2048
+KSWO_SamplerNameToSamplerId: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+KSys.lib 10.6.10 10:53:20
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 12
+KSys_ConnectSignal: 2048
+KSys_CreateEvent: 2048
+KSys_GetCallInfo: 2048
+KSys_GetCat: 2048
+KSys_GetShMem: 2048
+KSys_GetVar: 2048
+KSys_MapX: 2048
+KSys_Read: 2048
+KSys_SignalEvent: 2048
+KSys_StartCall: 2048
+KSys_WaitCall: 2048
+KSys_Write: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+KTypes.lib 10.6.10 10:53:06
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 0
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+McUtils.lib 24.5.12 15:38:58
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 17
+callback_McExceptionHandler: 2048
+MC_InitExceptionHandling: 2048
+McCalcGCD: 2048
+McCalcPosFromModPosTurn: 2048
+McGetCycleTime: 2048
+McHasIntelFormat: 2048
+McLastCallWasTicksAgo: 2048
+McLimitModuloPosition: 2048
+McLimitModuloPositionTurn: 2048
+McMeasureRunTime: 2048
+McSaturation: 2048
+McSetMessage: 2048
+McShortestWayModuloPos: 2048
+McSignum: 2048
+McSwoAddVariable: 2048
+McVarType_TO_SwoVarType: 2048
+SwoVarType_TO_McVarType: 2048
+NumOfGVLs: 3
+McUtils_Global_Constants: 2048
+McUtils_Global_Variables: 2048
+McUtils_Version: 2048
+END_LIBRARY
+
+LIBRARY
+PlcService.lib 10.6.10 10:53:20
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 10
+PLCGetCPUClock: 2048
+PLCGetCPUClockRate: 2048
+PLCGetDeviceName: 2048
+PLCGetFirmwareVersion: 2048
+PLCGetHoursCounter: 2048
+PLCGetLicenceOption: 2048
+PLCGetSerialNo: 2048
+PLCGetSystemVersion: 2048
+PLCGetVendorName: 2048
+PLCReboot: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+RcInterface.lib 29.6.12 12:58:48
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 29
+Callback_RcInit: 2048
+CDSAIfGetKeys: 2048
+CDSAIfSetProcessLed: 2048
+RcGetHtPath: 2048
+RcIfJogControl: 2048
+RcIfModeControl: 2048
+RcIfMsgQuit: 2048
+RcIfMsgRead: 2048
+RcIfMsgSet: 2048
+RcIfMsgSetComp: 2048
+RcIfOverride: 2048
+RcIfProgramControl: 2048
+RcIfProgramControl_V2: 2048
+RcIfRegAxisPos: 2048
+RcIfRegCartPos: 2048
+RcIfRobotData: 2048
+RcIfRobotUpdateGlobal: 2048
+RcIfRobotUpdateLocal: 2048
+RcIfSetRefSys: 2048
+RcIfSetTool: 2048
+RcIfWriteAccess: 2048
+RcInterfaceMapMcuValues: 2048
+RcMapHT: 2048
+RcMapMcp: 2048
+RcMapModeControl: 2048
+RcMapOutputBool: 2048
+RcMapOutputReal: 2048
+RcMapRegisters: 2048
+Version_Comment_RcInterface: 57352
+NumOfGVLs: 4
+Global_Constant: 57344
+GlobalVars_internal: 57344
+GlobalVars_RcInterface: 0
+Variablen_Konfiguration: 57344
+END_LIBRARY
+
+LIBRARY
+RcIntern.lib 24.5.12 15:38:58
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 9
+McuReadAppendFreeHdlName: 2048
+McuReadBackHdlName: 2048
+McuReadNeedNextSegSMemName: 2048
+McuReadSMemName: 2048
+McuSearchDbObj: 2048
+McuShellDeprecatedInit: 2048
+McuShellInit: 2048
+RCE_GroupReadPrediction: 2048
+RcInitAxesGroupRefPrivate: 2048
+NumOfGVLs: 5
+McuShell_Globale_Variablen: 2048
+McuShell_Globale_Variablen_Const: 2048
+RcIntern_Globale_Variablen: 2048
+RcIntern_Globale_Variablen_Const: 2048
+RcIntern_Version: 2048
+END_LIBRARY
+
+LIBRARY
+RcSignalProcessing.lib 24.5.12 15:38:58
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 4
+RCSP_DynLimitFilter: 2048
+RCSP_LagCompensator: 2048
+RCSP_SignalInfo: 2048
+RCSP_SmoothingFilter: 2048
+NumOfGVLs: 1
+RcSp_Version: 2048
+END_LIBRARY
+
+LIBRARY
+RcTracking.lib 24.5.12 15:38:58
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 44
+AddToLog: 2048
+callback_StarepOfRcTrackingLib: 2048
+ClearBuffer: 2048
+FinishObject: 2048
+InitConvInterface: 2048
+InitConvItfSwoVars: 2048
+InitFrameInterface: 2048
+InitFrameItfSwoVars: 2048
+RCTR_AddObject: 2048
+RCTR_GetLatestLog: 2048
+RCTR_GetLog: 2048
+RCTR_ReadBuffer: 2048
+RCTR_ReadConvData: 2048
+RCTR_ReadLog: 2048
+RCTR_ReadStatistic: 2048
+RCTR_RemoveObject: 2048
+RCTR_ResetData: 2048
+RCTR_UpdateConvInterface: 2048
+RCTR_UpdateConvInterface.ClearFrameState: 2048
+RCTR_UpdateConvInterface.UpdateAllTrackingData: 2048
+RCTR_UpdateConvInterface.UpdateVisuVars: 2048
+RCTR_UpdateConvInterface.WriteShMem: 2048
+RCTR_UpdateFrameInterface: 2048
+RCTR_WriteConvItfProtocol: 2048
+RCTR_WriteConvItfProtocol.FormatBufferLine: 2048
+RCTR_WriteConvItfProtocol.FormatFrameLine: 2048
+RCTR_WriteConvItfProtocol.FormatLogLine: 2048
+RCTR_WriteConvItfProtocol.FormatTimeString: 2048
+RCTR_WriteConvItfProtocol.WriteLineToFile: 2048
+ReadBufferIndex: 2048
+ReadLogIndex: 2048
+RemoveFromBuffer: 2048
+RemoveObject: 2048
+SendObject: 2048
+SetLogTimestamp: 2048
+StarepStringBuilder: 2048
+StarepStringBuilder.AddString: 2048
+StarepStringBuilder.Reset: 2048
+StarepStringBuilder.WriteLineToFile: 2048
+ValidateInput: 2048
+WriteConveyorLogToFile: 2048
+WriteConveyorLogToFile.WriteLineToFile: 2048
+WriteFrameItfLogToFile: 2048
+WriteFrameItfLogToFile.WriteLineToFile: 2048
+NumOfGVLs: 3
+RCTR_Global_Constants: 14336
+RCTR_Global_Variables: 4096
+RcTr_Version: 2048
+END_LIBRARY
+
+LIBRARY
+STANDARD.LIB 4.10.05 12:14:46
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 21
+CONCAT: 0
+CTD: 0
+CTU: 0
+CTUD: 0
+DELETE: 0
+F_TRIG: 0
+FIND: 0
+INSERT: 0
+LEFT: 0
+LEN: 0
+MID: 0
+R_TRIG: 0
+REPLACE: 0
+RIGHT: 0
+RS: 0
+RTC: 0
+SEMA: 0
+SR: 0
+TOF: 0
+TON: 0
+TP: 0
+NumOfGVLs: 0
+END_LIBRARY
+
+LIBRARY
+SYSLIBCALLBACK.LIB 30.11.11 08:05:58
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 2
+SysCallbackRegister: 0
+SysCallbackUnregister: 0
+NumOfGVLs: 0
+END_LIBRARY
+
+LIBRARY
+SysLibFile.lib 10.6.10 10:53:00
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 12
+SysFileClose: 0
+SysFileCopy: 0
+SysFileDelete: 0
+SysFileEOF: 0
+SysFileGetPos: 0
+SysFileGetSize: 0
+SysFileGetTime: 0
+SysFileOpen: 0
+SysFileRead: 0
+SysFileRename: 0
+SysFileSetPos: 0
+SysFileWrite: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SysLibFileAsync.lib 21.11.11 09:12:46
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 13
+SysFileCloseAllOpenAsync: 2048
+SysFileCloseAsync: 0
+SysFileCopyAsync: 0
+SysFileDeleteAsync: 0
+SysFileEOFAsync: 0
+SysFileGetPosAsync: 0
+SysFileGetSizeAsync: 0
+SysFileGetTimeAsync: 0
+SysFileOpenAsync: 0
+SysFileReadAsync: 0
+SysFileRenameAsync: 0
+SysFileSetPosAsync: 0
+SysFileWriteAsync: 0
+NumOfGVLs: 1
+GlobalVarsFileAsync: 0
+END_LIBRARY
+
+LIBRARY
+SysLibIecTasks.lib 10.6.10 10:53:02
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 4
+SysIECGetFctPointer: 0
+SysIECTaskGetConfig: 0
+SysIECTaskGetInfo: 0
+SysIECTaskResetEvent: 2048
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SysLibRtc.lib 10.6.10 10:53:02
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 4
+SysRtcCheckBattery: 0
+SysRtcGetHourMode: 0
+SysRtcGetTime: 0
+SysRtcSetTime: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SysLibSockets.lib 21.11.11 09:12:46
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 26
+SysSockAccept: 0
+SysSockBind: 0
+SysSockClose: 0
+SysSockConnect: 0
+SysSockCreate: 0
+SysSockGetHostByName: 0
+SysSockGetHostName: 0
+SysSockGetLastError: 2048
+SysSockGetLastErrorSync: 2048
+SysSockGetOption: 0
+SysSockHtonl: 0
+SysSockHtons: 0
+SysSockInetAddr: 0
+SysSockInetNtoa: 0
+SysSockIoctl: 0
+SysSockListen: 0
+SysSockNtohl: 0
+SysSockNtohs: 0
+SysSockRecv: 0
+SysSockRecvFrom: 0
+SysSockSelect: 0
+SysSockSend: 0
+SysSockSendTo: 0
+SysSockSetIPAddress: 0
+SysSockSetOption: 0
+SysSockShutdown: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SysLibSocketsAsync.lib 21.11.11 09:12:46
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 26
+SysSockAcceptAsync: 2048
+SysSockBindAsync: 2048
+SysSockCloseAllOpenAsync: 2048
+SysSockCloseAsync: 2048
+SysSockConnectAsync: 2048
+SysSockCreateAsync: 2048
+SysSockGetHostByNameAsync: 2048
+SysSockGetHostNameAsync: 2048
+SysSockGetLastErrorAsync: 2048
+SysSockGetOptionAsync: 2048
+SysSockHtonlAsync: 2048
+SysSockHtonsAsync: 2048
+SysSockInetAddrAsync: 2048
+SysSockInetNtoaAsync: 2048
+SysSockIoctlAsync: 2048
+SysSockListenAsync: 2048
+SysSockNtohlAsync: 2048
+SysSockNtohsAsync: 2048
+SysSockRecvAsync: 2048
+SysSockRecvFromAsync: 2048
+SysSockSelectAsync: 2048
+SysSockSendAsync: 2048
+SysSockSendToAsync: 2048
+SysSockSetIPAddressAsync: 2048
+SysSockSetOptionAsync: 2048
+SysSockShutdownAsync: 2048
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SYSLIBTIME.LIB 10.6.10 10:53:02
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 2
+CurTime: 0
+CurTimeEx: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+SYSTASKINFO.LIB 10.6.10 10:53:02
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 1
+taskinfo: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+LIBRARY
+ThreadSafeString.lib 14.5.12 16:17:26
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 9
+CONCAT_TS: 2048
+DELETE_TS: 2048
+FIND_TS: 2048
+INSERT_TS: 2048
+LEFT_TS: 2048
+LEN_TS: 2048
+MID_TS: 2048
+REPLACE_TS: 2048
+RIGHT_TS: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY
+
+LIBRARY
+Util.lib 18.5.10 15:14:28
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 24
+BCD_TO_INT: 2048
+BLINK: 2048
+CHARCURVE: 2048
+DERIVATIVE: 2048
+EXTRACT: 2048
+FREQ_MEASURE: 2048
+GEN: 2048
+HYSTERESIS: 2048
+INT_TO_BCD: 2048
+INTEGRAL: 2048
+LIMITALARM: 2048
+LIN_TRAFO: 2048
+PACK: 2048
+PD: 2048
+PID: 2048
+PID_FIXCYCLE: 2048
+PUTBIT: 2048
+RAMP_INT: 2048
+RAMP_REAL: 2048
+STATISTICS_INT: 2048
+STATISTICS_REAL: 2048
+UNPACK: 2048
+VARIANCE: 2048
+Version_Util: 2048
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY
+
+PLC_CONFIGURATION
+_GLOBAL
+_VERSION: 3
+_AUTOADR: 1
+_CHECKADR: 1
+_SAVECONFIGFILESINPROJECT: 0
+_END_GLOBAL
+
+_MODULE: '3S'
+_SECTION_NAME: 'Root'
+_INDEX_IN_PARENT: '-1'
+_MODULE_NAME: 'Festo CMXR-C2'
+_NODE_ID: -1
+_IECIN: %IB0
+_IECOUT: %QB0
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: ''
+
+_PARAMETER
+_PARAM 1: 0, '1'
+_END_PARAMETER
+
+_MODULE: '3S'
+_SECTION_NAME: 'Net'
+_INDEX_IN_PARENT: '1'
+_MODULE_NAME: 'Communication'
+_NODE_ID: 0
+_IECIN: %IB0
+_IECOUT: %QB0
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: ''
+
+_PARAMETER
+_PARAM 1: 0, '0'
+_END_PARAMETER
+_END_MODULE
+
+_MODULE: '3S'
+_SECTION_NAME: 'IO'
+_INDEX_IN_PARENT: '2'
+_MODULE_NAME: 'ExtModules'
+_NODE_ID: 1
+_IECIN: %IB0
+_IECOUT: %QB0
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: ''
+
+_PARAMETER
+_PARAM 1: 0, 'KBUS:0'
+_PARAM 2: 0, 'IX* STAT'
+_END_PARAMETER
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '1'
+_SYMBOLIC_NAME: ''
+_COMMENT: 'bus error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX0.0
+_END_CHANNEL
+
+_MODULE: '3S'
+_SECTION_NAME: 'DM272a'
+_INDEX_IN_PARENT: 'e1'
+_MODULE_NAME: 'CECX-D-8E8A-NP-2'
+_NODE_ID: 0
+_IECIN: %IB4
+_IECOUT: %QB0
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: 'DIO88_0'
+
+_PARAMETER
+_PARAM 1: 0, '[0]'
+_PARAM 2: 0, '1'
+_PARAM 3: 0, 'none'
+_PARAM 4: 0, 'none'
+_PARAM 5: 0, 'none'
+_PARAM 6: 0, 'none'
+_PARAM 7: 0, 'none'
+_PARAM 8: 0, 'none'
+_PARAM 9: 0, 'none'
+_PARAM 10: 0, 'none'
+_PARAM 11: 0, 'none'
+_PARAM 12: 0, 'none'
+_PARAM 13: 0, 'none'
+_PARAM 14: 0, 'DM272A'
+_PARAM 15: 0, 'IX* DI +0'
+_PARAM 16: 0, '.IX* DI +1'
+_PARAM 17: 0, '.IX* DI +2'
+_PARAM 18: 0, '.IX* DI +3'
+_PARAM 19: 0, '.IX* DI +4'
+_PARAM 20: 0, '.IX* DI +5'
+_PARAM 21: 0, '.IX* DI +6'
+_PARAM 22: 0, '.IX* DI +7'
+_PARAM 23: 0, 'QX* DO +0'
+_PARAM 24: 0, '.QX* DO +1'
+_PARAM 25: 0, '.QX* DO +2'
+_PARAM 26: 0, '.QX* DO +3'
+_PARAM 27: 0, '.QX* DO +4'
+_PARAM 28: 0, '.QX* DO +5'
+_PARAM 29: 0, '.QX* DO +6'
+_PARAM 30: 0, '.QX* DO +7'
+_PARAM 31: 0, 'IX* STAT'
+_PARAM 32: 0, 'IX* DI.STAT +0'
+_PARAM 33: 0, '.IX* DI.STAT +1'
+_PARAM 34: 0, '.IX* DI.STAT +2'
+_PARAM 35: 0, '.IX* DI.STAT +3'
+_PARAM 36: 0, '.IX* DI.STAT +4'
+_PARAM 37: 0, '.IX* DI.STAT +5'
+_PARAM 38: 0, '.IX* DI.STAT +6'
+_PARAM 39: 0, '.IX* DI.STAT +7'
+_PARAM 40: 0, 'IX* DO.STAT +0'
+_PARAM 41: 0, '.IX* DO.STAT +1'
+_PARAM 42: 0, '.IX* DO.STAT +2'
+_PARAM 43: 0, '.IX* DO.STAT +3'
+_PARAM 44: 0, '.IX* DO.STAT +4'
+_PARAM 45: 0, '.IX* DO.STAT +5'
+_PARAM 46: 0, '.IX* DO.STAT +6'
+_PARAM 47: 0, '.IX* DO.STAT +7'
+_END_PARAMETER
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '1'
+_SYMBOLIC_NAME: 'dinEmStop'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.0
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '2'
+_SYMBOLIC_NAME: 'dinEnabling'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.1
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '3'
+_SYMBOLIC_NAME: 'dinAutoSelect'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.2
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '4'
+_SYMBOLIC_NAME: 'dinManSelect'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.3
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '5'
+_SYMBOLIC_NAME: 'DIO88_0_In_4'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.4
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '6'
+_SYMBOLIC_NAME: 'DIO88_0_In_5'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.5
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '7'
+_SYMBOLIC_NAME: 'DIO88_0_In_6'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.6
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DI'
+_INDEX_IN_PARENT: '8'
+_SYMBOLIC_NAME: 'DIO88_0_In_7'
+_COMMENT: ''
+_CHANNEL_MODE: 'I'
+_IECADR: %IX4.7
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '9'
+_SYMBOLIC_NAME: 'doutError'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.0
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '10'
+_SYMBOLIC_NAME: 'DIO88_0_Out_1'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.1
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '11'
+_SYMBOLIC_NAME: 'doutAutoSelected'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.2
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '12'
+_SYMBOLIC_NAME: 'doutManSelected'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.3
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '13'
+_SYMBOLIC_NAME: 'DIO88_0_Out_4'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.4
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '14'
+_SYMBOLIC_NAME: 'DIO88_0_Out_5'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.5
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '15'
+_SYMBOLIC_NAME: 'DIO88_0_Out_6'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.6
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'DO'
+_INDEX_IN_PARENT: '16'
+_SYMBOLIC_NAME: 'DIO88_0_Out_7'
+_COMMENT: ''
+_CHANNEL_MODE: 'Q'
+_IECADR: %QX0.7
+_END_CHANNEL
+
+_MODULE: '3S'
+_SECTION_NAME: 'DM272a_ERR'
+_INDEX_IN_PARENT: '1'
+_MODULE_NAME: 'Module Status'
+_NODE_ID: 0
+_IECIN: %IB5
+_IECOUT: %QB1
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: 'Module status information'
+
+_CHANNEL
+_SECTION_NAME: 'ERB'
+_INDEX_IN_PARENT: '1'
+_SYMBOLIC_NAME: 'DIO88_0_err'
+_COMMENT: 'Module error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX5.0
+_END_CHANNEL
+
+_MODULE: '3S'
+_SECTION_NAME: 'ERR_DI8'
+_INDEX_IN_PARENT: '1'
+_MODULE_NAME: 'DI Status
+'
+_NODE_ID: 0
+_IECIN: %IB6
+_IECOUT: %QB1
+_IECDIAG: %MB0
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: 'DI errors'
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '1'
+_SYMBOLIC_NAME: 'dinEmStop_err'
+_COMMENT: 'DI0 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.0
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '2'
+_SYMBOLIC_NAME: 'dinEnabling_err'
+_COMMENT: 'DI1 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.1
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '3'
+_SYMBOLIC_NAME: 'dinAutoSelect_err'
+_COMMENT: 'DI2 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.2
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '4'
+_SYMBOLIC_NAME: 'dinManSelect_err'
+_COMMENT: 'DI3 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.3
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '5'
+_SYMBOLIC_NAME: 'DIO88_0_In_4_err'
+_COMMENT: 'DI4 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.4
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '6'
+_SYMBOLIC_NAME: 'DIO88_0_In_5_err'
+_COMMENT: 'DI5 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.5
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '7'
+_SYMBOLIC_NAME: 'DIO88_0_In_6_err'
+_COMMENT: 'DI6 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.6
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '8'
+_SYMBOLIC_NAME: 'DIO88_0_In_7_err'
+_COMMENT: 'DI7 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX6.7
+_END_CHANNEL
+_END_MODULE
+
+_MODULE: '3S'
+_SECTION_NAME: 'ERR_DO8'
+_INDEX_IN_PARENT: '2'
+_MODULE_NAME: 'DO Status
+'
+_NODE_ID: 1
+_IECIN: %IB7
+_IECOUT: %QB1
+_IECDIAG: %MB4
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: 'DO errors'
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '1'
+_SYMBOLIC_NAME: 'doutError_err'
+_COMMENT: 'DO0 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.0
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '2'
+_SYMBOLIC_NAME: 'DIO88_0_Out_1_err'
+_COMMENT: 'DO1 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.1
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '3'
+_SYMBOLIC_NAME: 'doutAutoSelected_err'
+_COMMENT: 'DO2 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.2
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '4'
+_SYMBOLIC_NAME: 'doutManSelected_err'
+_COMMENT: 'DO3 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.3
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '5'
+_SYMBOLIC_NAME: 'DIO88_0_Out_4_err'
+_COMMENT: 'DO4 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.4
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '6'
+_SYMBOLIC_NAME: 'DIO88_0_Out_5_err'
+_COMMENT: 'DO5 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.5
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '7'
+_SYMBOLIC_NAME: 'DIO88_0_Out_6_err'
+_COMMENT: 'DO6 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.6
+_END_CHANNEL
+
+_CHANNEL
+_SECTION_NAME: 'ERR'
+_INDEX_IN_PARENT: '8'
+_SYMBOLIC_NAME: 'DIO88_0_Out_7_err'
+_COMMENT: 'DO7 error'
+_CHANNEL_MODE: 'I'
+_IECADR: %IX7.7
+_END_CHANNEL
+_END_MODULE
+_END_MODULE
+_END_MODULE
+_END_MODULE
+
+_MODULE: 'CANMASTER'
+_SECTION_NAME: 'FxCanMaster'
+_INDEX_IN_PARENT: '3'
+_MODULE_NAME: 'CAN Master X4'
+_NODE_ID: 2
+_IECIN: %IB8
+_IECOUT: %QB4
+_IECDIAG: %MB8
+_DOWNLOAD: 1
+_EXCLUDEFROMAUTOADR: 0
+_COMMENT: ''
+
+_DEVICESPECIFIC_DATA
+_AUTOSTART: 1
+_ENABLE_SYNC_MESSAGES: 1
+_BAUDRATE: 125000
+_NODE_ID: 1
+_COMM_CYCLE_PERIOD: 8000
+_SYNC_COBID: 128
+_SYNC_WINDOW_LENGTH: 4000
+_DSP_VERSION: 0
+_END_DEVICESPECIFIC_DATA
+
+_PARAMETER
+_PARAM 1: 0, 'UserTask'
+_END_PARAMETER
+_END_MODULE
+_END_MODULE
+PLC_END
+
+
+RESOURCE
+
+TASK MotionTask (PRIORITY := 1, INTERVAL := T#20ms);
+  RC_INTERFACE();
+{Additional_info : 4,1,10,0,1,1600}
+END_TASK
+
+TASK UserTask (PRIORITY := 10, INTERVAL := T#20ms);
+  MAIN();
+ RC_STANDALONE();
+{Additional_info : 1,1,40,0,1,1600}
+END_TASK
+
+TASK UDPTCPExample (PRIORITY := 10, INTERVAL := T#200ms);
+ TCPServer();
+{Additional_info : 1,0,0,0,1,4294967295}
+END_TASK
+{event_task : 'start','Called when program starts','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,1,32982}
+{event_task : 'stop','Called when program stops','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,2,32982}
+{event_task : 'before_reset','Called before reset takes place','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,3,32982}
+{event_task : 'after_reset','Called after reset took place','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,4,32982}
+{event_task : 'shutdown','Called before shutdown is performed','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,5,32982}
+{event_task : 'excpt_cycletime_overflow','Called when a cycletime overflow happened','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,6,32982}
+{event_task : 'excpt_watchdog','Software watchdog OF IEC-task expired','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,7,32982}
+{event_task : 'excpt_access_violation','Access violation','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,12,32982}
+{event_task : 'after_reading_inputs','Called after reading of inputs','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,28,32982}
+{event_task : 'before_writing_outputs','Called before writing of outputs','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,29,32982}
+{event_task : 'debug_loop','Debug loop at breakpoint','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TdwFilter: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,31,32982}
+{event_task : 'DI_edge','Edge at interrupt enabled DI detected','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TpData: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,1500,32982}
+{event_task : 'starep_cb','Provides a callback upon activating a starep','','FUNCTION systemevent: DWORD$R$NVAR_INPUT$R$N$TdwEvent: DWORD;$R$N$TpData: DWORD;$R$N$TdwOwner: DWORD;$R$NEND_VAR$R$N'}{event_task_info : 0,1650,32982}
+
+END_RESOURCE
+
+
+_WORKSPACE
+_GLOBALVISUALSETTINGS
+_VISUALSETTINGSFLAGS : 0,0,0,0
+_VISUALSETTINGSFLAGS : '','',''
+_VISUALSETTINGSDYNTEXTFILECOUNT : 0
+_VISUALBITMAPLISTCOUNT : 0
+_END_GLOBALVISUALSETTINGS
+_END_WORKSPACE

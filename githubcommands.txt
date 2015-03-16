@@ -1,0 +1,7 @@
+git clone https://github.com/dcpria/FestoAR.git
+
+git pull
+
+git add -A
+git commit -m ""
+git push
